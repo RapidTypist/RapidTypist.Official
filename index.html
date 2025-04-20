@@ -67,6 +67,89 @@
 
 -->
 
+  <style>
+    /* Overlay */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    /* Popup box */
+    .popup-box {
+      background: white;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      animation: slideIn 0.4s ease-in-out;
+    }
+
+    .popup-box h2 {
+      color: #FF5722;
+      margin-bottom: 15px;
+    }
+
+    .popup-box p {
+      color: #333;
+      font-size: 15px;
+    }
+
+    .popup-box button {
+      margin-top: 20px;
+      background: #FF5722;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .popup-box button:hover {
+      background: #e64a19;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <h2>Notice</h2>
+    <p>This typing website is only for typing practice purposes. Please note that the typing speed may not always be accurate.</p>
+    <button onclick="closePopup()">OK, Got it!</button>
+  </div>
+</div>
+
+<script>
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+</script>
+
+
 
 <nav  class="navbar">
   <div class="logo">RapidTypist</div>
@@ -232,13 +315,7 @@
  <footer>
   <div class="top_header">
   <section>
-  <span><i class="fa fa-map-marker"></i></span>
-  <span>Street, full address, state/province, country, pincode</span>
-  </section>
-  <section>
-  <span><i class="fa fa-phone"></i></span>
-  <span>(00) 0000 0000</span>
-  </section>
+
   <section>
   <span><i class="fa fa-envelope"></i></span>
   <span>RapidTypistOfficial@gmail.com</span>
